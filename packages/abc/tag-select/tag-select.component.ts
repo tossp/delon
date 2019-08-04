@@ -29,10 +29,10 @@ import { Subscription } from 'rxjs';
 export class TagSelectComponent implements OnInit, OnDestroy {
   private i18n$: Subscription;
   locale: LocaleData = {};
-  expand = false;
 
   /** 是否启用 `展开与收进` */
   @Input() @InputBoolean() expandable = true;
+  @Input() @InputBoolean() expand = false;
   @Output() readonly change = new EventEmitter<boolean>();
 
   constructor(private i18n: DelonLocaleService, private cdr: ChangeDetectorRef) {}
